@@ -59,7 +59,7 @@ class IpNetworkFragment : Fragment() {
         binding.ipNetworkRecyclerView.adapter = adapter
         binding.ipNetworkRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.ipNetworkRecyclerView.addItemDecoration(DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL))
+//        binding.ipNetworkRecyclerView.addItemDecoration(DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL))
         binding.ipNetworkRecyclerView.itemAnimator = null
         adapter.submitList(mutableListOf())
         val handler = Handler()

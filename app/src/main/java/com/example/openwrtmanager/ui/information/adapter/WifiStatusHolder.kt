@@ -9,6 +9,7 @@ import com.example.openwrtmanager.com.example.openwrtmanager.ui.information.mode
 import com.example.openwrtmanager.com.example.openwrtmanager.utils.Utils
 import com.example.openwrtmanager.databinding.ListItemWifiStatusBinding
 import com.example.openwrtmanager.databinding.ViewstyleNetworkInterfaceBinding
+import com.example.openwrtmanager.databinding.ViewstyleWifiTrafficBinding
 import kotlin.math.roundToInt
 
 data class HostHintData(
@@ -114,6 +115,17 @@ class WifiStatusHolder(private val binding: ListItemWifiStatusBinding) :
                     currentInterface = cli["ifname"].toString();
                     apWithDevicesList.add(currentInterface);
                     firstClientInAP = true;
+                    // UI
+                    val childView =
+                        ViewstyleNetworkInterfaceBinding.inflate(LayoutInflater.from(binding.root.context))
+                    childView.interfaceName.setText(cli["hostname"])
+
+                    var freq = "";
+                    if (apData["frequency"] != null) freq = " ${(apData["frequency"] as Double) / 1000} Ghz ";
+                    var channel = "";
+                    if (apData["channel"] != null) channel = " (${apData["channel"]})";
+                    var f = "${apData["ssid"]}$freq$channel (${apData["mode"]}/${apData["encryption"]})"
+                    binding.title.text = f
                 }
             }
             ////////// TIME ////////
@@ -147,23 +159,30 @@ class WifiStatusHolder(private val binding: ListItemWifiStatusBinding) :
             }
             // 畫面
             val childView =
-                ViewstyleNetworkInterfaceBinding.inflate(LayoutInflater.from(binding.root.context))
-            childView.interfaceName.setText(cli["hostname"])
-            childView.interfaceIp.setText(cli["ifname"])
-            childView.interfaceTime.setText(cli["mac"])
+                ViewstyleWifiTrafficBinding.inflate(LayoutInflater.from(binding.root.context))
+            childView.wifiDbm.setText((cli["signal"] as Double).toString()+" dBm")
+            childView.wifiHostname.setText(cli["hostname"])
+            childView.wifiMac.setText(cli["mac"])
+            childView.wifiConnectedTime.setText("connected_time\n"+Utils.formatSeconds((cli["connected_time"] as Double).toLong()))
+            val rx_rate =
+                (cli["rx"] as Map<*, *>)["rate"].toString().toDouble();
+            val tx_rate =
+                (cli["tx"] as Map<*, *>)["rate"].toString().toDouble();
+            childView.wifiRxRate.setText("${rx_rate / 1000}/${tx_rate / 1000} Mbit/s")
+            childView.textView2.setText(cli["ip"])
             childView.incoming.setText(Utils.formatBytes(incoming.toByte(), 1))
             childView.incomingSpeed.setText(incomingSpeed)
             childView.outcoming.setText(Utils.formatBytes(outgoing.toByte(), 1))
             childView.outcomingSpeed.setText(outgoingSpeed)
             view.add(childView.root.rootView)
             // 時間
-            if (TempData._ipNetworkTrafficData[name] == null) {
-                TempData._ipNetworkTrafficData[name] = mutableMapOf<String, Any>();
+            if (TempData._wifiDeviceData[name] == null) {
+                TempData._wifiDeviceData[name] = mutableMapOf<String, Any>();
             }
-            TempData._ipNetworkTrafficData[name]!!["out"] = outgoing;
-            TempData._ipNetworkTrafficData[name]!!["in"] = incoming;
-            if (TempData._ipNetworkTrafficData[name]!!["timeStamp"] == null) {
-                TempData._ipNetworkTrafficData[name]!!["timeStamp"] = System.currentTimeMillis();
+            TempData._wifiDeviceData[name]!!["out"] = outgoing;
+            TempData._wifiDeviceData[name]!!["in"] = incoming;
+            if (TempData._wifiDeviceData[name]!!["timeStamp"] == null) {
+                TempData._wifiDeviceData[name]!!["timeStamp"] = System.currentTimeMillis();
             }
         }
         binding.wifiDeviceTraffic.removeAllViews()

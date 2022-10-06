@@ -50,8 +50,15 @@
     <fragment
         android:id="@+id/nav_wifi_device"
         android:name="com.example.openwrtmanager.com.example.openwrtmanager.ui.wifi_device.WifiDeviceFragment"
-        android:label="Ip Network Status"
+        android:label="Wifi Device"
         tools:layout="@layout/fragment_wifi_device" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.openwrtmanager.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" >
     </fragment>
 
 

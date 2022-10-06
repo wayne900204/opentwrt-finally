@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OpenWrtManager</string>
+    <string name="app_name">OpenWrt Manager</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">OpenWrtManager</string>
@@ -11,4 +11,9 @@
     <string name="menu_device">Device</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="display_name">Display Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_text">OpenWrt 是一個可以快速查看 OpenWrt 路由器的手機 App</string>
+    <string name="app_license">暫時沒有 license</string>
+    <string name="source_code">https://github.com/wayne900204/opentwrt-finally</string>
 </resources>

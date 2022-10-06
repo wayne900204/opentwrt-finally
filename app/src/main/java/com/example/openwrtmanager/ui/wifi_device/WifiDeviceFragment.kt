@@ -56,14 +56,10 @@ class WifiDeviceFragment : Fragment() {
         val loadingDialog = LoadingDialog(requireActivity())
         val adapter = WifiDeviceAdapter()
         binding.wifiDeviceRecyclerView.adapter = adapter
-        binding.wifiDeviceRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.wifiDeviceRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                binding.root.context,
-                DividerItemDecoration.VERTICAL
-            )
-        )
+        binding.wifiDeviceRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+//        binding.wifiDeviceRecyclerView.addItemDecoration(
+//            DividerItemDecoration(binding.root.context, DividerItemDecoration.VERTICAL)
+//        )
         binding.wifiDeviceRecyclerView.itemAnimator = null
         adapter.submitList(mutableListOf())
         val handler = Handler()

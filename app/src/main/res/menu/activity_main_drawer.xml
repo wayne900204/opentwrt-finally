@@ -12,10 +12,10 @@
             android:id="@+id/nav_device"
             android:icon="@drawable/ic_router"
             android:title="@string/menu_device" />
-        <item
-            android:id="@+id/nav_info"
-            android:icon="@drawable/ic_baseline_info_24"
-            android:title="All Info" />
+<!--        <item-->
+<!--            android:id="@+id/nav_info"-->
+<!--            android:icon="@drawable/ic_baseline_info_24"-->
+<!--            android:title="All Info" />-->
         <item
             android:id="@+id/nav_ip_network"
             android:icon="@drawable/ic_info"
@@ -30,7 +30,11 @@
             android:title="Active Connection" />
         <item
             android:id="@+id/nav_wifi_device"
-            android:icon="@drawable/ic_connection"
+            android:icon="@drawable/ic_baseline_wifi_24"
             android:title="Wifi Device" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_copy_right"
+            android:title="About" />
     </group>
 </menu>

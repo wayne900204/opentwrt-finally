@@ -57,12 +57,12 @@ class NetworkTrafficFragment : Fragment() {
         binding.networkTrafficRecyclerView.adapter = adapter
         binding.networkTrafficRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.networkTrafficRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                binding.root.context,
-                DividerItemDecoration.VERTICAL
-            )
-        )
+//        binding.networkTrafficRecyclerView.addItemDecoration(
+//            DividerItemDecoration(
+//                binding.root.context,
+//                DividerItemDecoration.VERTICAL
+//            )
+//        )
         binding.networkTrafficRecyclerView.itemAnimator = null
         adapter.submitList(mutableListOf())
         val handler = Handler()

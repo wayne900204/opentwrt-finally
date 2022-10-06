@@ -1,11 +1,17 @@
 package com.example.openwrtmanager.com.example.openwrtmanager.ui.device
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
+import android.content.res.Resources
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.openwrtmanager.R
 import com.example.openwrtmanager.com.example.openwrtmanager.ui.device.database.DeviceItem
 import com.example.openwrtmanager.databinding.ListItemIdentitiyBinding
 import com.example.openwrtmanager.ui.device.DeviceFragmentDirections
@@ -57,8 +63,10 @@ class DeviceAdapter : RecyclerView.Adapter<DeviceAdapter.MyViewHolder>() {
             }
             if (pref.getInt("device_select_item_id", -1) == item.id) {
                 binding.isUsing.visibility = View.VISIBLE
+//                binding.itemIdentity.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.stroke))
             } else {
                 binding.isUsing.visibility = View.GONE
+//                binding.itemIdentity.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.white))
             }
         }
 
