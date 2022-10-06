@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="12dp"
+    tools:context=".ui.device.AddDeviceFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/display_name"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/display_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/display_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="display name is missing"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_input" />
+
+    <TextView
+        android:id="@+id/identity_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="identity name is missing"
+        android:textColor="@color/warning"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_error" />
+
+    <TextView
+        android:id="@+id/ip_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="IP Address"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/port"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identity_error" />
+
+    <TextView
+        android:id="@+id/port"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Port"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/identity_error" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ip_address_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:hint="X.X.X.X"
+        android:lines="1"
+        app:layout_constraintEnd_toStartOf="@+id/port_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/port_input"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:hint="80/443"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address" />
+
+    <TextView
+        android:id="@+id/ip_address_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ip_address is missing"
+        android:textColor="@color/warning"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address_input" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address_error" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/username_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:hint="X.X.X.X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/username_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="username is missing"
+        android:textColor="@color/warning"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_input" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_error" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/password_input_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password is missing"
+        android:textColor="@color/warning"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+    <CheckBox
+        android:id="@+id/use_https_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:checked="false"
+        android:text="Use https"
+        app:layout_constraintEnd_toStartOf="@+id/ignore_bad_certificate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input_error" />
+
+    <CheckBox
+        android:id="@+id/ignore_bad_certificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:text="Ignore certificate errors"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/use_https_connection"
+        app:layout_constraintTop_toBottomOf="@+id/password_input_error" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:text="Test"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/ignore_bad_certificate" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:background="@color/red"
+        android:text="Delete"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/test" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:background="@color/blue"
+        android:text="Save"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:id="@+id/display_name"-->
+    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:hint="@string/display_name"-->
+    <!--app:expandedHintEnabled="false"-->
+    <!--app:prefixText="OpenWrt"-->
+    <!--app:endIconMode="clear_text"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--    android:id="@+id/display_name_text_input"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:maxLines="2"-->
+    <!--    android:paddingHorizontal="30dp"-->
+    <!--    android:textColorHint="#757575" />-->
+
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/display_name"-->
+    <!--android:id="@+id/dropdown_menu"-->
+    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:expandedHintEnabled="false"-->
+    <!--app:prefixText="hihihi"-->
+    <!--android:hint="Identity">-->
+
+    <!--<AutoCompleteTextView-->
+    <!--    android:id="@+id/dropdown_menu_input"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:inputType="none"-->
+    <!--    android:textColorHint="#757575"-->
+    <!--    android:paddingHorizontal="30dp"-->
+    <!--    />-->
+
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:id="@+id/ip_address_text"-->
+    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:endIconMode="clear_text"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintEnd_toStartOf="@id/port_menu"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/dropdown_menu"-->
+    <!--app:expandedHintEnabled="false"-->
+    <!--app:prefixText="X.X.X.X"-->
+    <!--android:hint="IP Address">-->
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--    android:id="@+id/ip_address_input"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:maxLines="2"-->
+    <!--    android:paddingHorizontal="30dp"-->
+    <!--    android:textColorHint="#757575" />-->
+
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+    <!--android:id="@+id/port_menu"-->
+    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+    <!--android:layout_width="130dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/dropdown_menu"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:expandedHintEnabled="false"-->
+    <!--app:prefixText="80/443"-->
+    <!--android:hint="Port">-->
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+    <!--    android:id="@+id/port_menu_input"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:maxLines="2"-->
+    <!--    android:paddingHorizontal="30dp"-->
+    <!--    android:textColorHint="#757575"-->
+    <!--    />-->
+
+    <!--</com.google.android.material.textfield.TextInputLayout>-->

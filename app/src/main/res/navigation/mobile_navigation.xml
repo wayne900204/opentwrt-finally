@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.openwrtmanager.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_device"
+        android:name="com.example.openwrtmanager.ui.device.DeviceFragment"
+        android:label="@string/menu_device"
+        tools:layout="@layout/fragment_device" >
+        <action
+            android:id="@+id/actionDeviceFragmentToAddDeviceFragment"
+            app:destination="@id/add_device_page" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.example.openwrtmanager.ui.information.InfoFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_info">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ip_network"
+        android:name="com.example.openwrtmanager.ui.ip_network_status.IpNetworkFragment"
+        android:label="Ip Network Status"
+        tools:layout="@layout/fragment_ip_network" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_network_traffic"
+        android:name="com.example.openwrtmanager.ui.network_traffic.NetworkTrafficFragment"
+        android:label="Network Traffic"
+        tools:layout="@layout/fragment_network_traffic" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_activite_connection"
+        android:name="com.example.openwrtmanager.ui.active_connection.ActiveConnectionFragment"
+        android:label="Active Connection"
+        tools:layout="@layout/fragment_activite_connection" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_wifi_device"
+        android:name="com.example.openwrtmanager.com.example.openwrtmanager.ui.wifi_device.WifiDeviceFragment"
+        android:label="Ip Network Status"
+        tools:layout="@layout/fragment_wifi_device" >
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/add_device_page"
+        android:name="com.example.openwrtmanager.ui.device.AddDeviceFragment"
+        tools:layout="@layout/add_device_fragment" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="is_edit"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+    </fragment>
+
+</navigation>

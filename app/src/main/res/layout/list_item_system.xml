@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="System Info"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    app:layout_constraintTop_toBottomOf="@+id/title"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:id="@+id/item_system_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostname" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Up" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memory Usage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kernel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hostname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostname" />
+
+        <TextView
+            android:id="@+id/uptime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Up" />
+
+        <TextView
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load" />
+
+        <TextView
+            android:id="@+id/memory_usage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memory Usage" />
+
+        <TextView
+            android:id="@+id/release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release" />
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model" />
+
+        <TextView
+            android:id="@+id/kernel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kernel" />
+
+        <TextView
+            android:id="@+id/system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System" />
+
+        <TextView
+            android:id="@+id/target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target" />
+    </LinearLayout>
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<TextView-->
+    <!--android:id="@+id/status_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/collector_info"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:autoLink="web"-->
+    <!--        android:drawablePadding="10dp"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/status_view"-->
+    <!--        tools:text="Collector Info"-->
+    <!--        tools:visibility="gone" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/interface_info"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:gravity="center"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/collector_info"-->
+    <!--        tools:text="Capturing from eth0..."-->
+    <!--        tools:visibility="gone" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/status_view"-->
+    <!--        android:layout_width="210dp"-->
+    <!--        android:layout_height="210dp"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:background="@drawable/rounded_bg"-->
+    <!--        android:focusable="false"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="ready"-->
+    <!--        android:textSize="30sp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/quick_settings"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="35dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="10dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/status_view">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:paddingEnd="0dp">-->
+
+    <!--            <include-->
+    <!--                android:id="@+id/app_filter_text"-->
+    <!--                layout="@layout/quick_settings_item"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="50dp" />-->
+
+    <!--            <androidx.appcompat.widget.SwitchCompat-->
+    <!--                android:id="@+id/app_filter_switch"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_centerInParent="true" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/app_filter_warning"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@id/app_filter_text"-->
+    <!--                android:paddingHorizontal="10dp"-->
+    <!--                android:text="Select a target app when decrypting TLS to avoid losing your connection to the Internet"-->
+    <!--                android:textColor="@color/warning"-->
+    <!--                android:textSize="14sp" />-->
+    <!--        </RelativeLayout>-->
+    <!--    </LinearLayout>-->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--&lt;!&ndash;<androidx.appcompat.widget.AppCompatSpinner&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/dump_mode_spinner"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:prompt="Dump mode"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:spinnerMode="dialog" />&ndash;&gt;-->
