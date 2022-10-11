@@ -1,2 +1,1 @@
 # OpenWrtManager
-# opentwrt-finally

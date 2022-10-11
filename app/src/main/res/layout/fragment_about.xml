@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:src="@drawable/icon8"
+            android:src="@drawable/logo"
             android:adjustViewBounds="true" />
 
         <TextView
@@ -52,31 +52,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:autoLink="email"
-                android:text="聯絡我 wayne900204@gmail.com" />
-
+                android:text="聯絡我們：\n s1082859@gm.pu.edu.tw , s1082866@gm.pu.edu.tw" />
             <TextView
                 android:id="@+id/app_license"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/app_license"/>
-
+                android:text="Source code："/>
             <TextView
                 android:id="@+id/app_source_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:autoLink="web"
                 android:text="@string/source_code"/>
+
             <TextView
-                android:id="@+id/app_source"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ICON 素材取用自："
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:id="@+id/icons_8"
+                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="參考資料"/>
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                app:srcCompat="@drawable/icons8"/>
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
